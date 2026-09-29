@@ -1,11 +1,24 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <component :is="layoutComponent">
+    <router-view />
+  </component>
 </template>
 
-<style scoped></style>
+<script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import AuthLayout from '@/layouts/AuthLayout.vue'
+import DashboardLayout from '@/layouts/DashboardLayout.vue'
+
+const route = useRoute()
+
+const layoutComponent = computed(() => {
+  return route.meta.layout === 'dashboard' ? DashboardLayout : AuthLayout
+})
+</script>
+
+<style scoped>
+:global(body) {
+  margin: 0;
+}
+</style>

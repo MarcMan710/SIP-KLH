@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npm run test:unit": true,
+        "/^cd \"c:/Users/KEMAL/Documents/Aplikasi-Web/SIP-KLH/frontend\" && python - <<'PY'\nfrom pathlib import Path\nfor p in sorted\\(Path\\('src'\\)\\.rglob\\('\\*\\.\\*'\\)\\):\n    if p\\.suffix\\.lower\\(\\) in \\{'\\.js','\\.vue'\\}:\n        try:\n            s = p\\.read_text\\(encoding='utf-8'\\)\n            if len\\(s\\.strip\\(\\)\\) < 250:\n                print\\(f'\\{p\\}: \\{len\\(s\\.strip\\(\\)\\)\\} bytes'\\)\n        except Exception:\n            pass\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
